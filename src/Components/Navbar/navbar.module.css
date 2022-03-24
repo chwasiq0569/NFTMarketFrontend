@@ -1,0 +1,59 @@
+.navbarContainer {
+  width: 100%;
+  height: 3.5rem;
+
+  background-color: transparent;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.navbarContainer .navItemsContainer {
+  width: auto;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbarContainer .navItemsContainer .navItem {
+  /* margin: 0 40px; */
+
+  margin-right: 40px;
+}
+
+.navbarContainer .navItemsContainer .navItem span {
+  /* margin: 0 40px; */
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+.navbarContainer .navItemsContainer .ctaBtnContainer button {
+  width: 120px;
+  height: 35px;
+
+  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  border-radius: 8px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
