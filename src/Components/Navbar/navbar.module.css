@@ -9,6 +9,10 @@
   justify-content: space-between;
 
   align-items: center;
+
+  z-index: 2;
+
+  position: relative;
 }
 
 .navbarContainer .navItemsContainer {
@@ -34,6 +38,8 @@
   /* identical to box height */
 
   color: #ffffff;
+
+  cursor: pointer;
 }
 
 .navbarContainer .navItemsContainer .ctaBtnContainer button {

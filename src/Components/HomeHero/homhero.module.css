@@ -4,6 +4,20 @@
   display: flex;
 }
 
+.heroContainer::before {
+  content: "";
+  background-image: url("../../assets/images/pexels-miriam-espacio-110854.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+
+  z-index: 1;
+}
+
 .heroContainer .heroTextContainer,
 .heroContainer .heroCoverContainer {
   width: 50%;
@@ -11,10 +25,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .heroContainer .heroCoverContainer {
-  align-items: center;
+  align-items: flex-end;
 }
 
 .heroContainer .heroTextContainer h1 {
@@ -22,8 +37,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
-  line-height: 120%;
+  font-size: 34px;
   /* or 60px */
 
   color: #ffffff;
@@ -34,14 +48,13 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 180%;
   /* or 36px */
 
   /* half white */
 
   color: rgba(255, 255, 255, 0.5);
 
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .heroContainer .heroTextContainer .ctaContainer {
@@ -67,7 +80,6 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 30px;
   /* identical to box height */
 
   color: #ffffff;
@@ -83,12 +95,11 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 30px;
   /* identical to box height */
 
   color: #ffffff;
 
-  padding: 8px 20px;
+  padding: 10px 20px;
 
   margin-left: 20px;
 }
