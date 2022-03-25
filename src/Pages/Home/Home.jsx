@@ -6,6 +6,7 @@ import MainCTASection from "../../Components/MainCTASection/MainCTASection";
 import FeaturedNFTs from "./../../Components/FeaturedNFTs/FeaturedNFTs";
 import InfoSection from "./../../Components/InfoSection/InfoSection";
 import AboutCoverImage from "../../assets/images/aboutSectionImg.png";
+import Footer from "./../../Components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
           coverImage={AboutCoverImage}
         />
       </div>
+      <Footer />
     </div>
   );
 };
