@@ -13,17 +13,3 @@
 
   padding: 0 3rem;
 }
-
-.contentContainer::before {
-  content: "";
-  background-image: url("../../assets/images/pexels-miriam-espacio-110854.jpg");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
-
-  /* z-index: 1; */
-}
