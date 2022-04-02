@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./checkoutpopup.module.css";
 import DummyCardImage from "../../assets/images/dummyimage.png";
 
-const CheckoutPopUp = () => {
+const CheckoutPopUp = ({ setOpenCheckoutPopUp }) => {
   return (
     <div className={styles.popUpContainer}>
       <p className={styles.popUpHead}>Check Out</p>
@@ -30,7 +30,12 @@ const CheckoutPopUp = () => {
       </div>
       <div className={styles.buttonsContainer}>
         <button className={styles.checkoutButton}>Checkout</button>
-        <button className={styles.cancelButton}>Cancel</button>
+        <button
+          onClick={() => setOpenCheckoutPopUp(false)}
+          className={styles.cancelButton}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

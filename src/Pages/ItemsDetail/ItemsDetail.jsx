@@ -6,10 +6,14 @@ import DummyCardImage from "../../assets/images/dummyimage.png";
 import CheckoutPopUp from "./../../Components/CheckoutPopUp/CheckoutPopUp";
 
 const ItemsDetail = () => {
+  const [openCheckoutPopUp, setOpenCheckoutPopUp] = React.useState(false);
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.contentContainer}>
-        <CheckoutPopUp />
+        {openCheckoutPopUp && (
+          <CheckoutPopUp setOpenCheckoutPopUp={setOpenCheckoutPopUp} />
+        )}
         <Navbar />
         <div className={styles.imageDetailsContainer}>
           <div className={styles.leftSide}>
@@ -26,7 +30,12 @@ const ItemsDetail = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book
             </p>
-            <button className={styles.buyButton}>Buy for 0.5 $</button>
+            <button
+              onClick={() => setOpenCheckoutPopUp(true)}
+              className={styles.buyButton}
+            >
+              Buy for 0.5 $
+            </button>
           </div>
         </div>
       </div>
