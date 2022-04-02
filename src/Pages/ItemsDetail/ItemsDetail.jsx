@@ -3,11 +3,13 @@ import styles from "./itemsdetail.module.css";
 import Navbar from "./../../Components/Navbar/Navbar";
 import Footer from "./../../Components/Footer/Footer";
 import DummyCardImage from "../../assets/images/dummyimage.png";
+import CheckoutPopUp from "./../../Components/CheckoutPopUp/CheckoutPopUp";
 
 const ItemsDetail = () => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.contentContainer}>
+        <CheckoutPopUp />
         <Navbar />
         <div className={styles.imageDetailsContainer}>
           <div className={styles.leftSide}>
