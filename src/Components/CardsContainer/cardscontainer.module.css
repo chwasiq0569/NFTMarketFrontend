@@ -2,11 +2,17 @@
   width: 100%;
   min-height: calc(100vh - 6rem);
 
+  margin: 5rem 0;
+}
+
+.cardsContainer .cardsWrapper {
+  /* width: auto;
+
+  height: auto;
   display: flex;
-  /* align-items: center; */
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 
-  justify-content: center;
-
-  margin: 4rem 0;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }

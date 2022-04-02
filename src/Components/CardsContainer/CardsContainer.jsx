@@ -5,14 +5,16 @@ import ImageCard from "../ImageCard/ImageCard";
 const CardsContainer = () => {
   return (
     <div className={styles.cardsContainer}>
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
+      <div className={styles.cardsWrapper}>
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+      </div>
     </div>
   );
 };
