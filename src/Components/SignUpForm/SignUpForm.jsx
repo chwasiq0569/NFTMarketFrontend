@@ -84,7 +84,7 @@ const SignUpForm = ({ setShowSignIn }) => {
       ) : (
         <button
           disabled={
-            username.length < 3 || email.length < 8 || password.length < 3
+            username.length < 3 || email.length < 5 || password.length < 3
           }
           onClick={signUp}
           className={styles.actionButton}

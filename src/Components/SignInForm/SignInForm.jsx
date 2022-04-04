@@ -1,10 +1,47 @@
 import React from "react";
 import styles from "./signinform.module.css";
+import ClipLoader from "react-spinners/ClipLoader";
+import { notifyError } from "../../utils";
+import { notifySuccess } from "./../../utils";
+import { css } from "@emotion/react";
+import { useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const navigate = useNavigate();
+
+  const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: #ffffff;
+  `;
+
+  const signIn = () => {
+    setLoading(true);
+    fetch("http://localhost:5000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "1") {
+          navigate("/");
+        } else {
+          notifyError(data.message);
+        }
+        setLoading(false);
+
+        console.log("API_RES", data);
+      });
+  };
 
   return (
     <div className={styles.formContainer}>
@@ -26,7 +63,24 @@ const SignInForm = () => {
           placeholder="Enter Password"
         />
       </div>
-      <button className={styles.actionButton}>Sign In</button>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <ClipLoader
+            color="#ffffff"
+            loading={loading}
+            css={override}
+            size={25}
+          />
+        </div>
+      ) : (
+        <button
+          disabled={email.length < 5 || password.length < 3}
+          className={styles.actionButton}
+          onClick={signIn}
+        >
+          Sign In
+        </button>
+      )}
     </div>
   );
 };
