@@ -1,0 +1,53 @@
+.authPageContainer {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+}
+
+.authPageContainer .intoDesignContainer,
+.authPageContainer .authFormContainer {
+  width: 50%;
+  height: 100%;
+}
+
+.authPageContainer .intoDesignContainer {
+  background: radial-gradient(
+    70.4% 106.08% at 39.77% 39.04%,
+    #02006c 0%,
+    #181e41 63.29%
+  );
+}
+
+.authPageContainer .intoDesignContainer::before {
+  width: 50%;
+  content: "";
+  background-image: url("../../assets/images/pexels-miriam-espacio-110854.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+}
+
+.authPageContainer .authFormContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+    70.4% 106.08% at 39.77% 39.04%,
+    #02006c 0%,
+    #181e41 63.29%
+  );
+}
+
+.authPageContainer .authFormContainer .logoContainer {
+  width: 400px;
+
+  border: 2px solid red;
+}

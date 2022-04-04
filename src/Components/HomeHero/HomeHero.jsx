@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "./homhero.module.css";
 import HeroCoverImage from "../../assets/images/heroCoverimage.png";
+import { useNavigate } from "react-router-dom";
 
 const HomeHero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroTextContainer}>
@@ -12,8 +15,8 @@ const HomeHero = () => {
           vulputate libero et velit.
         </p>
         <div className={styles.ctaContainer}>
-          <button>Explore Now</button>
-          <button>Sell NFT</button>
+          <button onClick={() => navigate("/explore")}>Explore Now</button>
+          <button>Get NFT Collection Now!</button>
         </div>
       </div>
       <div className={styles.heroCoverContainer}>

@@ -12,11 +12,19 @@ const ItemsDetail = () => {
     <div className={styles.pageContainer}>
       <div className={styles.contentContainer}>
         {openCheckoutPopUp && (
-          <CheckoutPopUp setOpenCheckoutPopUp={setOpenCheckoutPopUp} />
+          <>
+            {" "}
+            <div className={styles.dullWrapper}></div>
+            <CheckoutPopUp setOpenCheckoutPopUp={setOpenCheckoutPopUp} />
+          </>
         )}
         <Navbar />
         <div className={styles.imageDetailsContainer}>
-          <div className={styles.leftSide}>
+          <div
+            onContextMenu={(e) => e.preventDefault()}
+            className={styles.leftSide}
+          >
+            <div className={styles.imageWrapper}></div>
             <img src={DummyCardImage} alt="image_" />
           </div>
           <div className={styles.rightSide}>

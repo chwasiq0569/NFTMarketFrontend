@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const isTablet = useMediaQuery({
@@ -25,14 +26,24 @@ const Navbar = () => {
         </div>
       ) : (
         <div className={styles.navItemsContainer}>
-          <div className={styles.navItem}>
-            <span>Collections</span>
-          </div>
-          <div className={styles.navItem}>
-            <span>FAQ</span>
-          </div>
+          <Link
+            style={{ border: "none", outline: "none", textDecoration: "none" }}
+            to="/explore"
+          >
+            {" "}
+            <div className={styles.navItem}>
+              <span>Explore</span>
+            </div>
+          </Link>
+          <Link to="/">
+            {" "}
+            <div className={styles.navItem}>
+              <span>Create Collection</span>
+            </div>
+          </Link>
+
           <div className={styles.navCtaBtnContainer}>
-            <button>Select Wallet</button>
+            <button>Sign Up</button>
           </div>
         </div>
       )}
