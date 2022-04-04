@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./navbar.module.css";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -21,7 +24,7 @@ const Navbar = () => {
             <span>FAQ</span>
           </div>
           <div className={styles.mobileNavCtaBtnContainer}>
-            <button>Select Wallet</button>
+            <button>Sign In</button>
           </div>
         </div>
       ) : (
@@ -43,7 +46,7 @@ const Navbar = () => {
           </Link>
 
           <div className={styles.navCtaBtnContainer}>
-            <button>Sign Up</button>
+            <button onClick={() => navigate("/auth")}>Sign In</button>
           </div>
         </div>
       )}
