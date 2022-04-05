@@ -5,6 +5,7 @@ import { notifyError } from "../../utils";
 import { notifySuccess } from "./../../utils";
 import { css } from "@emotion/react";
 import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 const SignInForm = () => {
   const [email, setEmail] = React.useState("");
@@ -33,12 +34,15 @@ const SignInForm = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "1") {
+          const user = jwt_decode(data.token);
+
+          localStorage.setItem("user", JSON.stringify("user", user));
+
           navigate("/");
         } else {
           notifyError(data.message);
         }
         setLoading(false);
-
         console.log("API_RES", data);
       });
   };
